@@ -1,150 +1,154 @@
 {
-    "schema":  "dies-irae-kaziklu-kr.savepath-release-manifest.v3",
-    "version":  "1.0.0-savepath-v3",
-    "status":  "payload-bound-static-pass",
-    "packageName":  "Dies_irae_Kaziklu_Bey_KR_1.0.0-savepath-v3",
-    "createdUtc":  "2026-08-11T15:57:52.2575898Z",
-    "installMode":  "add-data3-and-replace-malie-ini-with-external-exact-backup",
-    "allowedGamePayloads":  [
-                                "files/data3.dat",
-                                "files/malie.ini"
-                            ],
-    "forbiddenPayloads":  [
-                              "*.exe",
-                              "*.dll",
-                              "*.msi",
-                              "data.dat",
-                              "malie.exe",
-                              "malie_fabula.exe"
-                          ],
-    "payloads":  [
-                     {
-                         "role":  "malie-overlay",
-                         "path":  "files/data3.dat",
-                         "targetBasename":  "data3.dat",
-                         "size":  23890944,
-                         "sha256":  "10F96750CEDA0C8854FFBD4E03E20D603355B30E3E7738F1F7ACB02E79C23C9D",
-                         "hashCliParameter":  "-Data3Sha256"
-                     },
-                     {
-                         "role":  "save-path-title-fix",
-                         "path":  "files/malie.ini",
-                         "targetBasename":  "malie.ini",
-                         "size":  2880,
-                         "sha256":  "6F46E60A92B92FA36DBAE7962D0848C6A8EDA5132818AD1481CE03A1D054AD70",
-                         "hashCliParameter":  "-PatchedIniSha256"
-                     }
-                 ],
-    "baseline":  {
-                     "contractId":  "kaziklu-en-original-12files-data3-malieini-v3",
-                     "exactTopLevelFileSet":  true,
-                     "fileCount":  12,
-                     "files":  [
-                                   {
-                                       "path":  "as.ini",
-                                       "size":  420,
-                                       "sha256":  "B83563B88A41A07A31B10F8C6D6441DC393FFB1BE2C4054D969E2484C44F5CA9"
-                                   },
-                                   {
-                                       "path":  "data.dat",
-                                       "size":  1718971392,
-                                       "sha256":  "BCF75746F4C2F550B070DE77B08E185AE79DFAD0A370F2611C6AF448257D31CB"
-                                   },
-                                   {
-                                       "path":  "ds.ini",
-                                       "size":  2749,
-                                       "sha256":  "6EC9AA069244844EF18C1A77CD35D781CFE56653498F9D6374B3C9DD10F38C17"
-                                   },
-                                   {
-                                       "path":  "GameuxInstallHelper.dll",
-                                       "size":  106496,
-                                       "sha256":  "A627788E649BCF0EC9122AB91DA1079399D267A0DB3132AB3B8FA56B0CD75A04"
-                                   },
-                                   {
-                                       "path":  "gdiplus.dll",
-                                       "size":  1645320,
-                                       "sha256":  "F1DA32183B3DA19F75FA4EF0974A64895266B16D119BBB1DA9FE63867DBA0645"
-                                   },
-                                   {
-                                       "path":  "light_bana.bmp",
-                                       "size":  24056,
-                                       "sha256":  "70509CBE95E4DCBAC69316B4B7FB34159E5347EB83739B096BE0C47832444C46"
-                                   },
-                                   {
-                                       "path":  "malie.exe",
-                                       "size":  4123648,
-                                       "sha256":  "7DCF8ECA7288E787A93A405C2818B19BD3B367830B72D3188B09042E2304D963"
-                                   },
-                                   {
-                                       "path":  "malie.ini",
-                                       "size":  2882,
-                                       "sha256":  "ADE7C6BCBD11B741F7FEA34EAFFB48E7E4375AFF73F2D2354907206B3F129712"
-                                   },
-                                   {
-                                       "path":  "maliesetup.dll",
-                                       "size":  98304,
-                                       "sha256":  "1C8034F3E140B0F8B0E6CCB6B4D3F043BFF54F9D39DA70ABA1E1EAD3AB6C0F1E"
-                                   },
-                                   {
-                                       "path":  "README.txt",
-                                       "size":  338,
-                                       "sha256":  "7C28C990A190A0FD7CE7B47BE461E73078E5FC5A8E7EFEAAE9A64CC564FB6E0A"
-                                   },
-                                   {
-                                       "path":  "steam_api.dll",
-                                       "size":  1240064,
-                                       "sha256":  "701E7DF41A6B16A9179716DC0A24956A8D80D0085BBF980829122AE576F8F6CF"
-                                   },
-                                   {
-                                       "path":  "unicows.dll",
-                                       "size":  258352,
-                                       "sha256":  "F06F36FA03A5DB4980C9D1120ADA1D9E558515BE73EFF5B7CD34C48C0D9AFD35"
-                                   }
-                               ]
-                 },
-    "malieIniPatch":  {
-                          "manifestPath":  "manifests/malie_ini_patch_manifest.json",
-                          "original":  {
-                                           "size":  2882,
-                                           "sha256":  "ADE7C6BCBD11B741F7FEA34EAFFB48E7E4375AFF73F2D2354907206B3F129712"
-                                       },
-                          "patched":  {
-                                          "size":  2880,
-                                          "sha256":  "6F46E60A92B92FA36DBAE7962D0848C6A8EDA5132818AD1481CE03A1D054AD70"
-                                      },
-                          "titleOnlyReplacementCount":  2
-                      },
-    "invariants":  {
-                       "malieExeMustRemainOriginal":  true,
-                       "malieExeSize":  4123648,
-                       "malieExeSha256":  "7DCF8ECA7288E787A93A405C2818B19BD3B367830B72D3188B09042E2304D963",
-                       "dataDatMustRemainOriginal":  true,
-                       "dataDatSize":  1718971392,
-                       "dataDatSha256":  "BCF75746F4C2F550B070DE77B08E185AE79DFAD0A370F2611C6AF448257D31CB",
-                       "originalMalieIniExternalExactBackupRequired":  true,
-                       "backupManifestTransactionPathHashSizeBound":  true,
-                       "exactTargetProcessGuard":  true,
-                       "wrongBaselineTamperDoubleInstallFailClose":  true,
-                       "forceRestoreMayDiscardOnlyManagedMalieIniAndData3":  true
-                   },
-    "staticQa":  {
-                     "windowsPowerShell51Synthetic":  "10/10 PASS",
-                     "productionWrongBaselineWrapper":  "PASS",
-                     "payloadBindings":  "2/2 PASS",
-                     "baselineContractCrosscheck":  "12/12 PASS",
-                     "forbiddenBinaryPayloadCount":  0,
-                     "zipExactExtraction":  "PASS",
-                     "gameLaunches":  0,
-                     "registryWrites":  0,
-                     "audioOperations":  0
-                 },
-    "licensing":  {
-                      "font":  "Noto Sans KR derivative embedded in files/data3.dat",
-                      "license":  "SIL Open Font License 1.1",
-                      "licensePath":  "licenses/OFL.txt",
-                      "licenseSha256":  "7DE7A0650396D7C38DBFBA341B2B0601EF60C203026AA30AE3009B63D0991FBA",
-                      "noticePath":  "THIRD_PARTY_NOTICES.md",
-                      "noticeSha256":  "659501CC7B9D2CE4D68D04EC5DBBE809B0133F50A409A3394AE2836EA4AAC1AF",
-                      "sourceNoticeReferenceSha256":  "63F1A4B69FD45090FD01B1F4366604BA3E10829D293324F5F77349F9A5204555"
-                  }
+  "schema": "dies-irae-kaziklu-kr.savepath-release-manifest.v4",
+  "version": "1.0.1-savepath-v4",
+  "status": "payload-bound-static-pass",
+  "packageName": "Dies_irae_Kaziklu_Bey_KR_1.0.1-savepath-v4",
+  "createdUtc": "2026-08-11T17:47:05.162Z",
+  "installMode": "add-data3-and-replace-malie-ini-with-external-exact-backup",
+  "allowedGamePayloads": [
+    "files/data3.dat",
+    "files/malie.ini"
+  ],
+  "forbiddenPayloads": [
+    "*.exe",
+    "*.dll",
+    "*.msi",
+    "data.dat",
+    "malie.exe",
+    "malie_fabula.exe"
+  ],
+  "payloads": [
+    {
+      "role": "malie-overlay",
+      "path": "files/data3.dat",
+      "targetBasename": "data3.dat",
+      "size": 23890944,
+      "sha256": "B7F46AEB1A5E9AAA31B255C102863FC366A7F4973BFABA56EE854D656D1145DF",
+      "hashCliParameter": "-Data3Sha256"
+    },
+    {
+      "role": "save-path-title-fix",
+      "path": "files/malie.ini",
+      "targetBasename": "malie.ini",
+      "size": 2880,
+      "sha256": "6F46E60A92B92FA36DBAE7962D0848C6A8EDA5132818AD1481CE03A1D054AD70",
+      "hashCliParameter": "-PatchedIniSha256"
+    }
+  ],
+  "baseline": {
+    "contractId": "kaziklu-en-original-12files-data3-malieini-v4",
+    "exactTopLevelFileSet": true,
+    "fileCount": 12,
+    "files": [
+      {
+        "path": "as.ini",
+        "size": 420,
+        "sha256": "B83563B88A41A07A31B10F8C6D6441DC393FFB1BE2C4054D969E2484C44F5CA9"
+      },
+      {
+        "path": "data.dat",
+        "size": 1718971392,
+        "sha256": "BCF75746F4C2F550B070DE77B08E185AE79DFAD0A370F2611C6AF448257D31CB"
+      },
+      {
+        "path": "ds.ini",
+        "size": 2749,
+        "sha256": "6EC9AA069244844EF18C1A77CD35D781CFE56653498F9D6374B3C9DD10F38C17"
+      },
+      {
+        "path": "GameuxInstallHelper.dll",
+        "size": 106496,
+        "sha256": "A627788E649BCF0EC9122AB91DA1079399D267A0DB3132AB3B8FA56B0CD75A04"
+      },
+      {
+        "path": "gdiplus.dll",
+        "size": 1645320,
+        "sha256": "F1DA32183B3DA19F75FA4EF0974A64895266B16D119BBB1DA9FE63867DBA0645"
+      },
+      {
+        "path": "light_bana.bmp",
+        "size": 24056,
+        "sha256": "70509CBE95E4DCBAC69316B4B7FB34159E5347EB83739B096BE0C47832444C46"
+      },
+      {
+        "path": "malie.exe",
+        "size": 4123648,
+        "sha256": "7DCF8ECA7288E787A93A405C2818B19BD3B367830B72D3188B09042E2304D963"
+      },
+      {
+        "path": "malie.ini",
+        "size": 2882,
+        "sha256": "ADE7C6BCBD11B741F7FEA34EAFFB48E7E4375AFF73F2D2354907206B3F129712"
+      },
+      {
+        "path": "maliesetup.dll",
+        "size": 98304,
+        "sha256": "1C8034F3E140B0F8B0E6CCB6B4D3F043BFF54F9D39DA70ABA1E1EAD3AB6C0F1E"
+      },
+      {
+        "path": "README.txt",
+        "size": 338,
+        "sha256": "7C28C990A190A0FD7CE7B47BE461E73078E5FC5A8E7EFEAAE9A64CC564FB6E0A"
+      },
+      {
+        "path": "steam_api.dll",
+        "size": 1240064,
+        "sha256": "701E7DF41A6B16A9179716DC0A24956A8D80D0085BBF980829122AE576F8F6CF"
+      },
+      {
+        "path": "unicows.dll",
+        "size": 258352,
+        "sha256": "F06F36FA03A5DB4980C9D1120ADA1D9E558515BE73EFF5B7CD34C48C0D9AFD35"
+      }
+    ]
+  },
+  "malieIniPatch": {
+    "manifestPath": "manifests/malie_ini_patch_manifest.json",
+    "original": {
+      "size": 2882,
+      "sha256": "ADE7C6BCBD11B741F7FEA34EAFFB48E7E4375AFF73F2D2354907206B3F129712"
+    },
+    "patched": {
+      "size": 2880,
+      "sha256": "6F46E60A92B92FA36DBAE7962D0848C6A8EDA5132818AD1481CE03A1D054AD70"
+    },
+    "titleOnlyReplacementCount": 2
+  },
+  "invariants": {
+    "malieExeMustRemainOriginal": true,
+    "malieExeSize": 4123648,
+    "malieExeSha256": "7DCF8ECA7288E787A93A405C2818B19BD3B367830B72D3188B09042E2304D963",
+    "dataDatMustRemainOriginal": true,
+    "dataDatSize": 1718971392,
+    "dataDatSha256": "BCF75746F4C2F550B070DE77B08E185AE79DFAD0A370F2611C6AF448257D31CB",
+    "originalMalieIniExternalExactBackupRequired": true,
+    "backupManifestTransactionPathHashSizeBound": true,
+    "exactTargetProcessGuard": true,
+    "wrongBaselineTamperDoubleInstallFailClose": true,
+    "forceRestoreMayDiscardOnlyManagedMalieIniAndData3": true
+  },
+  "staticQa": {
+    "windowsPowerShell51Synthetic": "fresh 10/10 PASS",
+    "productionWrongBaselineWrapper": "PASS",
+    "payloadBindings": "2/2 PASS",
+    "baselineContractCrosscheck": "12/12 PASS",
+    "forbiddenBinaryPayloadCount": 0,
+    "zipExactExtraction": "PASS",
+    "gameLaunches": 0,
+    "registryWrites": 0,
+    "audioOperations": 0,
+    "syntheticReportPath": "manifests/synthetic_test_report.json",
+    "syntheticReportSchema": "dies-irae-kaziklu-kr.synthetic-savepath-package-tests.v4",
+    "syntheticReportCreatedUtc": "2026-08-11T17:47:05.1620746Z",
+    "syntheticReportSha256": "DC1D508C04EC56E7B617CF1EF2E20496DB6667D63A1D4E66011F58140B7D4B91"
+  },
+  "licensing": {
+    "font": "Noto Sans KR derivative embedded in files/data3.dat",
+    "license": "SIL Open Font License 1.1",
+    "licensePath": "licenses/OFL.txt",
+    "licenseSha256": "7DE7A0650396D7C38DBFBA341B2B0601EF60C203026AA30AE3009B63D0991FBA",
+    "noticePath": "THIRD_PARTY_NOTICES.md",
+    "noticeSha256": "659501CC7B9D2CE4D68D04EC5DBBE809B0133F50A409A3394AE2836EA4AAC1AF",
+    "sourceNoticeReferenceSha256": "63F1A4B69FD45090FD01B1F4366604BA3E10829D293324F5F77349F9A5204555"
+  }
 }

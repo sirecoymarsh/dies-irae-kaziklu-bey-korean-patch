@@ -1,0 +1,76 @@
+{
+    "schema":  "dies-irae-kaziklu-kr.malie-ini-title-patch.v3",
+    "createdUtc":  "2026-08-11T15:57:52.2575898Z",
+    "encoding":  "CP932",
+    "scope":  "TITLE line only",
+    "original":  {
+                     "path":  "original-12-file-baseline/malie.ini",
+                     "size":  2882,
+                     "sha256":  "ADE7C6BCBD11B741F7FEA34EAFFB48E7E4375AFF73F2D2354907206B3F129712"
+                 },
+    "patched":  {
+                    "path":  "files/malie.ini",
+                    "size":  2880,
+                    "sha256":  "6F46E60A92B92FA36DBAE7962D0848C6A8EDA5132818AD1481CE03A1D054AD70"
+                },
+    "titleLine":  {
+                      "originalByteRange":  {
+                                                "start":  95,
+                                                "endExclusive":  141
+                                            },
+                      "patchedByteRange":  {
+                                               "start":  95,
+                                               "endExclusive":  139
+                                           },
+                      "originalHex":  "5449544C453D446965732069726165208160496E746572766965772077697468204B617A696B6C75204265798160",
+                      "patchedHex":  "5449544C453D446965732069726165207E496E746572766965772077697468204B617A696B6C75204265797E",
+                      "originalDecodedCp932":  "TITLE=Dies irae ～Interview with Kaziklu Bey～",
+                      "patchedAscii":  "TITLE=Dies irae ~Interview with Kaziklu Bey~"
+                  },
+    "transformations":  [
+                            {
+                                "originalOffset":  111,
+                                "originalHex":  "8160",
+                                "patchedOffset":  111,
+                                "patchedHex":  "7E"
+                            },
+                            {
+                                "originalOffset":  139,
+                                "originalHex":  "8160",
+                                "patchedOffset":  138,
+                                "patchedHex":  "7E"
+                            }
+                        ],
+    "unrelatedCp932SequencePreserved":  {
+                                            "originalOffset":  666,
+                                            "patchedOffset":  664,
+                                            "hex":  "8160",
+                                            "context":  "comment range 0～100"
+                                        },
+    "proof":  {
+                  "replacementCount":  2,
+                  "globalOriginal8160Count":  3,
+                  "globalPatched8160Count":  1,
+                  "prefixBytesUnchanged":  {
+                                               "original":  [
+                                                                0,
+                                                                95
+                                                            ],
+                                               "patched":  [
+                                                               0,
+                                                               95
+                                                           ]
+                                           },
+                  "suffixBytesUnchanged":  {
+                                               "original":  [
+                                                                141,
+                                                                2882
+                                                            ],
+                                               "patched":  [
+                                                               139,
+                                                               2880
+                                                           ]
+                                           },
+                  "allNonTitleBytesUnchanged":  true
+              }
+}

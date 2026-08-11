@@ -1,0 +1,32 @@
+# GitHub Release assets and game/payload binaries are never tracked.
+*.zip
+*.7z
+*.rar
+*.dat
+*.exe
+*.dll
+*.msi
+*.bin
+*.bak
+*.tmp
+*.py[cod]
+__pycache__/
+/files/
+
+# Copyrighted source-game data and local pipeline outputs.
+/original/
+/extracted/
+/runtime_fixture/
+/packets/
+/staging/
+/work/
+/qa/
+/evidence/
+/artifacts/
+/dist/
+
+# Local editor and OS files.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

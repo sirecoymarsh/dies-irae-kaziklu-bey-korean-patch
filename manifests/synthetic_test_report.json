@@ -1,0 +1,63 @@
+{
+    "schema":  "dies-irae-kaziklu-kr.synthetic-savepath-package-tests.v3",
+    "createdUtc":  "2026-08-11T15:49:25.7799979Z",
+    "powershellVersion":  "5.1.26100.8972",
+    "gameLaunches":  0,
+    "registryWrites":  0,
+    "audioOperations":  0,
+    "cases":  [
+                  {
+                      "name":  "install/verify/uninstall exact lifecycle",
+                      "status":  "PASS",
+                      "detail":  "patched INI + data3 installed; backup-bound original INI and exact 12-file baseline restored"
+                  },
+                  {
+                      "name":  "double install fail-close",
+                      "status":  "PASS",
+                      "detail":  "active state rejected before managed-file write"
+                  },
+                  {
+                      "name":  "wrong 12-file baseline fail-close",
+                      "status":  "PASS",
+                      "detail":  "data.dat drift rejected before state/game write"
+                  },
+                  {
+                      "name":  "tampered data3 payload fail-close",
+                      "status":  "PASS",
+                      "detail":  "fixed contract + CLI SHA rejected before state/game write"
+                  },
+                  {
+                      "name":  "tampered patched INI payload fail-close",
+                      "status":  "PASS",
+                      "detail":  "fixed contract + CLI SHA rejected before state/game write"
+                  },
+                  {
+                      "name":  "installed data3 tamper then force restore",
+                      "status":  "PASS",
+                      "detail":  "normal uninstall refused; force restore recovered original INI and removed overlay"
+                  },
+                  {
+                      "name":  "installed INI tamper then force restore",
+                      "status":  "PASS",
+                      "detail":  "normal uninstall refused; force restore used verified original INI backup"
+                  },
+                  {
+                      "name":  "tampered backup bytes fail-close",
+                      "status":  "PASS",
+                      "detail":  "backup bytes verified before first restore write"
+                  },
+                  {
+                      "name":  "tampered backup manifest fail-close",
+                      "status":  "PASS",
+                      "detail":  "transaction, path, original hash/size metadata are contract-bound"
+                  },
+                  {
+                      "name":  "canonical process and active-state contract guard",
+                      "status":  "PASS",
+                      "detail":  "foreign same-name path allowed; exact target and state+CLI hash substitution rejected"
+                  }
+              ],
+    "passed":  10,
+    "failed":  0,
+    "valid":  true
+}

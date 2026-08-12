@@ -31,12 +31,12 @@ function Get-KazikluProductionContract {
     )
     [pscustomobject]@{
         Schema = 'dies-irae-kaziklu-kr.savepath-contract.v3'
-        ContractId = 'kaziklu-en-original-12files-data3-malieini-v4'
-        ReleaseVersion = '1.0.1-savepath-v4'
+        ContractId = 'kaziklu-en-original-12files-data3-malieini-v8'
+        ReleaseVersion = '1.0.2'
         OverlayName = 'data3.dat'
         ManagedIniName = 'malie.ini'
-        Data3Size = 23890944
-        Data3Sha256 = 'B7F46AEB1A5E9AAA31B255C102863FC366A7F4973BFABA56EE854D656D1145DF'
+        Data3Size = 23725056
+        Data3Sha256 = '8AE1A0A900BD8BE87B59BA32B1FDF1137C77576B112FA8B3E2B4A18026A4A69E'
         PatchedIniSize = 2880
         PatchedIniSha256 = '6F46E60A92B92FA36DBAE7962D0848C6A8EDA5132818AD1481CE03A1D054AD70'
         BaselineFiles = $files
@@ -238,8 +238,8 @@ function Assert-KazikluPayload {
     Assert-KazikluBaselineContract $Contract
     Assert-KazikluSha256Text $Data3Sha256 'data3 payload'
     Assert-KazikluSha256Text $PatchedIniSha256 'patched malie.ini payload'
-    if ($Data3Sha256.ToUpperInvariant() -ne ([string]$Contract.Data3Sha256).ToUpperInvariant()) { throw 'CLI data3 SHA-256이 v4 release 계약과 다릅니다.' }
-    if ($PatchedIniSha256.ToUpperInvariant() -ne ([string]$Contract.PatchedIniSha256).ToUpperInvariant()) { throw 'CLI patched malie.ini SHA-256이 v4 release 계약과 다릅니다.' }
+    if ($Data3Sha256.ToUpperInvariant() -ne ([string]$Contract.Data3Sha256).ToUpperInvariant()) { throw 'CLI data3 SHA-256이 v8 release 계약과 다릅니다.' }
+    if ($PatchedIniSha256.ToUpperInvariant() -ne ([string]$Contract.PatchedIniSha256).ToUpperInvariant()) { throw 'CLI patched malie.ini SHA-256이 v8 release 계약과 다릅니다.' }
     if (-not [string]::Equals([IO.Path]::GetFileName($Data3Path), [string]$Contract.OverlayName, [StringComparison]::OrdinalIgnoreCase)) { throw "overlay basename은 반드시 $($Contract.OverlayName)여야 합니다." }
     if (-not [string]::Equals([IO.Path]::GetFileName($PatchedIniPath), [string]$Contract.ManagedIniName, [StringComparison]::OrdinalIgnoreCase)) { throw "INI basename은 반드시 $($Contract.ManagedIniName)여야 합니다." }
     $originalIni = Get-KazikluBindingByName $Contract ([string]$Contract.ManagedIniName)
@@ -328,8 +328,8 @@ function Read-KazikluActiveState {
     )
     Assert-KazikluSha256Text $Data3Sha256 'data3 payload'
     Assert-KazikluSha256Text $PatchedIniSha256 'patched malie.ini payload'
-    if ($Data3Sha256.ToUpperInvariant() -ne ([string]$Contract.Data3Sha256).ToUpperInvariant()) { throw 'CLI data3 SHA-256이 v4 release 계약과 다릅니다.' }
-    if ($PatchedIniSha256.ToUpperInvariant() -ne ([string]$Contract.PatchedIniSha256).ToUpperInvariant()) { throw 'CLI patched malie.ini SHA-256이 v4 release 계약과 다릅니다.' }
+    if ($Data3Sha256.ToUpperInvariant() -ne ([string]$Contract.Data3Sha256).ToUpperInvariant()) { throw 'CLI data3 SHA-256이 v8 release 계약과 다릅니다.' }
+    if ($PatchedIniSha256.ToUpperInvariant() -ne ([string]$Contract.PatchedIniSha256).ToUpperInvariant()) { throw 'CLI patched malie.ini SHA-256이 v8 release 계약과 다릅니다.' }
     $paths = Get-KazikluStatePaths $GameDir $StateRoot
     if (-not (Test-Path -LiteralPath $paths.ActiveManifest -PathType Leaf)) {
         throw "활성 설치 기록이 없습니다: $($paths.ActiveManifest)"

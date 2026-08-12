@@ -1,13 +1,28 @@
 {
-  "schema": "dies-irae-kaziklu-kr.package-tree.v4",
-  "createdUtc": "2026-08-11T17:47:05.162Z",
+  "schema": "dies-irae-kaziklu-kr.package-tree.v8",
+  "createdUtc": "2026-08-12T10:43:45.823Z",
   "manifestSelfExcluded": true,
-  "fileCountBeforeManifest": 14,
+  "fileCountBeforeManifest": 15,
   "files": [
     {
-      "path": "lib/KazikluSavePath.Core.ps1",
-      "size": 34195,
-      "sha256": "AD93650B90352578F139B205DC5360478B9146A3139C0A17783764C8152C4B17"
+      "path": "QA_STATUS.md",
+      "size": 475,
+      "sha256": "F7AD51F207EF2B717A2677A2EB91138E80AA9F682D55E400215284F4C6C90BDF"
+    },
+    {
+      "path": "README_KO.md",
+      "size": 1601,
+      "sha256": "2C69181BC9057FC5C9FDB8BE0989E11805844806EC6EF0C4CD3A0496D6A2723F"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "size": 1097,
+      "sha256": "659501CC7B9D2CE4D68D04EC5DBBE809B0133F50A409A3394AE2836EA4AAC1AF"
+    },
+    {
+      "path": "files/data3.dat",
+      "size": 23725056,
+      "sha256": "8AE1A0A900BD8BE87B59BA32B1FDF1137C77576B112FA8B3E2B4A18026A4A69E"
     },
     {
       "path": "files/malie.ini",
@@ -15,34 +30,9 @@
       "sha256": "6F46E60A92B92FA36DBAE7962D0848C6A8EDA5132818AD1481CE03A1D054AD70"
     },
     {
-      "path": "files/data3.dat",
-      "size": 23890944,
-      "sha256": "B7F46AEB1A5E9AAA31B255C102863FC366A7F4973BFABA56EE854D656D1145DF"
-    },
-    {
-      "path": "licenses/OFL.txt",
-      "size": 4388,
-      "sha256": "7DE7A0650396D7C38DBFBA341B2B0601EF60C203026AA30AE3009B63D0991FBA"
-    },
-    {
-      "path": "manifests/synthetic_test_report.json",
-      "size": 2949,
-      "sha256": "DC1D508C04EC56E7B617CF1EF2E20496DB6667D63A1D4E66011F58140B7D4B91"
-    },
-    {
-      "path": "manifests/release_manifest.json",
-      "size": 5279,
-      "sha256": "50A0C17BA0CC9A9326099571A666844530FA7387FCDD939FDC4F27F979015E29"
-    },
-    {
-      "path": "manifests/malie_ini_patch_manifest.json",
-      "size": 4058,
-      "sha256": "E18043317FDD329BBD5B074424342F49AB55E10558634B1F1E61AF89F3980719"
-    },
-    {
-      "path": "QA_STATUS.md",
-      "size": 1535,
-      "sha256": "9F0A81ED8BBEFFCCE8BFC8DD8A40701219D584C8FB128F6DFDAC2A2AA9C01B70"
+      "path": "force_restore_ko.ps1",
+      "size": 942,
+      "sha256": "229B60F412F1C11B89A14A974EA286E3D434CBAD596662966A5AA9DC91FFC5EC"
     },
     {
       "path": "install_ko.ps1",
@@ -50,19 +40,34 @@
       "sha256": "3826DFEBCDE069B0D85C62AABAA2716701FDC58A367B95BBFEFA21749DC185F5"
     },
     {
-      "path": "force_restore_ko.ps1",
-      "size": 942,
-      "sha256": "229B60F412F1C11B89A14A974EA286E3D434CBAD596662966A5AA9DC91FFC5EC"
+      "path": "lib/KazikluSavePath.Core.ps1",
+      "size": 34183,
+      "sha256": "29A78D141074B53F07E8680A4A990F0F075EF738134ECAB51D09E36782F6DB07"
     },
     {
-      "path": "README_KO.md",
-      "size": 3280,
-      "sha256": "8AFB9B5B50751A813D6461687FB01529B9EFA84B1E62FE3499F3B396CDA9B67A"
+      "path": "licenses/OFL.txt",
+      "size": 4388,
+      "sha256": "7DE7A0650396D7C38DBFBA341B2B0601EF60C203026AA30AE3009B63D0991FBA"
     },
     {
-      "path": "verify_ko.ps1",
-      "size": 868,
-      "sha256": "CC808CE05229109997F8700CFE9F9A130FD3B913B6041623BE191732064B6A60"
+      "path": "manifests/malie_ini_patch_manifest.json",
+      "size": 4058,
+      "sha256": "E18043317FDD329BBD5B074424342F49AB55E10558634B1F1E61AF89F3980719"
+    },
+    {
+      "path": "manifests/release_manifest.json",
+      "size": 5650,
+      "sha256": "28D47623DB1DDB70A6DBDCAE60BB637288BF2BEEEE3713FD80523D3A50AFE585"
+    },
+    {
+      "path": "manifests/runtime_user_approval.json",
+      "size": 533,
+      "sha256": "7ABF379A9785092B0DC9351821D45891DA65B5474030BC7E52C91AD33BBE5833"
+    },
+    {
+      "path": "manifests/synthetic_test_report.json",
+      "size": 2949,
+      "sha256": "9DEAD689B23C89FDA0052E0261BFE8F7B972CED3A5EE08CB34B374A22AFC9E73"
     },
     {
       "path": "uninstall_ko.ps1",
@@ -70,9 +75,9 @@
       "sha256": "4F39651D69B55DCCD97C6C5BE6B0BE3A316F1171AA5F13F3F965F395425C0486"
     },
     {
-      "path": "THIRD_PARTY_NOTICES.md",
-      "size": 1097,
-      "sha256": "659501CC7B9D2CE4D68D04EC5DBBE809B0133F50A409A3394AE2836EA4AAC1AF"
+      "path": "verify_ko.ps1",
+      "size": 868,
+      "sha256": "CC808CE05229109997F8700CFE9F9A130FD3B913B6041623BE191732064B6A60"
     }
   ]
 }

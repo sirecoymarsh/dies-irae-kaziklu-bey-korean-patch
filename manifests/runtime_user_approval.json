@@ -1,0 +1,17 @@
+{
+  "schema": "dies-irae-kaziklu-kr.runtime-user-approval.v1",
+  "status": "APPROVED",
+  "approvedUtc": "2026-08-12T10:43:45.823Z",
+  "userStatement": "모든 막대 정상",
+  "scope": [
+    "sound settings sliders",
+    "text settings sliders",
+    "voice settings per-character sliders",
+    "previously accepted title/common-menu/load-save/voice-name/glossary UI"
+  ],
+  "runtime": {
+    "data3Size": 23725056,
+    "data3Sha256": "8AE1A0A900BD8BE87B59BA32B1FDF1137C77576B112FA8B3E2B4A18026A4A69E",
+    "sound": "ON_DIRECT"
+  }
+}

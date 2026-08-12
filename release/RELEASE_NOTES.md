@@ -1,35 +1,31 @@
-# Dies irae: Interview with Kaziklu Bey 한국어 패치 1.0.1-savepath-v4
+# Dies irae: Interview with Kaziklu Bey 한국어 패치 1.0.2
 
 ## 주요 변경
 
-- Helga가 Wilhelm의 생모이자 혈연상 누나라는 공식 관계와 사용자 확정에 맞춰, Wilhelm 상대 대사를 다정하고 모성적·집착적인 누나 반말로 교정
-- `v_hrg*` 85좌표 전수 검토: 61 수정, 24 유지, 동일 문장 연속 슬롯 1 추가 수정(총 62 target delta)
-- Claudia 대상 격노 반말과 웃음·비명·독일어 노래·영창은 문맥에 맞게 유지
-- 저장 경로 `malie.ini`, wrapper 4개, 라이선스/고지는 1.0.0과 byte-identical
-- 공통 core는 새 data3를 fail-close 결박하기 위한 version/contract/size/SHA 값만 최소 갱신
-- 원본 `malie.exe`와 `data.dat` 무수정
-
-## 이전 버전에서 갱신
-
-v3가 설치되어 있으면 v3 패키지의 제거 스크립트와 v3 data3 SHA로 원본 12파일 상태를 먼저 복원한 뒤 v4를 설치하십시오. 활성 설치 위 덮어쓰기는 double-install 보호로 거부됩니다.
+- 전체 시나리오 및 이미지 기반 UI 한국어화 완성
+- 헬가→빌헬름 말투를 생모이자 누나인 관계에 맞는 친밀한 반말로 교정
+- 로트 슈피네·리자 브렌나 인명 표기를 시나리오와 음성 설정 UI에서 통일
+- 타이틀 메뉴와 설정 좌측 메뉴의 활성/비활성 크기 및 정렬 통일
+- 음성 설정 인물명 영문 잔재 제거, `최소/최대` 배치 교정
+- 용어집 목록 축약명과 본문 정식 명칭의 구조를 영문판에 맞게 복원
+- 저장/불러오기 화면 코멘트 영역과 설정 메뉴 잔재·구멍 교정
+- 사운드·텍스트·음성 설정의 막대 영역을 원본 픽셀로 복원
+- `malie.ini` 저장 경로 수정 유지
 
 ## payload
 
-- `data3.dat`: 23,890,944 bytes / `B7F46AEB1A5E9AAA31B255C102863FC366A7F4973BFABA56EE854D656D1145DF`
+- `data3.dat`: 23,725,056 bytes / `8AE1A0A900BD8BE87B59BA32B1FDF1137C77576B112FA8B3E2B4A18026A4A69E`
 - patched `malie.ini`: 2,880 bytes / `6F46E60A92B92FA36DBAE7962D0848C6A8EDA5132818AD1481CE03A1D054AD70`
 
 ## QA
 
-- 원본 baseline 12/12, payload 2/2 hash binding PASS
-- Windows PowerShell 5.1 synthetic 10/10 PASS (fresh v4 report)
-- wrong baseline·double install·payload/설치본/백업/state tamper fail-close 계약 유지
-- ZIP deterministic rebuild 및 exact entry byte/hash 일치 PASS
-- payload 내 EXE/DLL/MSI 0
-- 패키징 lane의 게임 실행·게임 쓰기·레지스트리 쓰기·오디오 조작 0
+- data3 A/B deterministic build 및 독립 재개봉 PASS
+- UI v8 막대 복원 18/18, 비대상 픽셀 불변 PASS
+- Windows PowerShell 5.1 synthetic 10/10 PASS
+- deterministic ZIP 및 exact entry bytes PASS
+- 원본 EXE/DLL/data.dat 미포함·미교체
 
 ## 배포 파일
 
-- `Dies_irae_Kaziklu_Bey_KR_1.0.1-savepath-v4.zip` (22,575,659 bytes)
-- SHA-256: `3787FF1F46558A0DED9A17CFA2DB30F92679322F2EFF1E072AE7474D57B5977D`
-
-ZIP과 `data3.dat`/patched `malie.ini` payload는 GitHub Release asset으로만 배포하며 Git 이력에는 포함하지 않습니다.
+- `Dies_irae_Kaziklu_Bey_KR_1.0.2.zip` (22,413,427 bytes)
+- SHA-256: `B05E2819A96AEC288000C4261E875969124711A6E457191A20B74AACF75610A5`

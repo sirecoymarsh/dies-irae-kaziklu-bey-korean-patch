@@ -1,9 +1,9 @@
 {
-  "schema": "dies-irae-kaziklu-kr.savepath-release-manifest.v4",
-  "version": "1.0.1-savepath-v4",
-  "status": "payload-bound-static-pass",
-  "packageName": "Dies_irae_Kaziklu_Bey_KR_1.0.1-savepath-v4",
-  "createdUtc": "2026-08-11T17:47:05.162Z",
+  "schema": "dies-irae-kaziklu-kr.savepath-release-manifest.v8",
+  "version": "1.0.2",
+  "status": "approved-for-release",
+  "packageName": "Dies_irae_Kaziklu_Bey_KR_1.0.2",
+  "createdUtc": "2026-08-12T10:43:45.823Z",
   "installMode": "add-data3-and-replace-malie-ini-with-external-exact-backup",
   "allowedGamePayloads": [
     "files/data3.dat",
@@ -22,8 +22,8 @@
       "role": "malie-overlay",
       "path": "files/data3.dat",
       "targetBasename": "data3.dat",
-      "size": 23890944,
-      "sha256": "B7F46AEB1A5E9AAA31B255C102863FC366A7F4973BFABA56EE854D656D1145DF",
+      "size": 23725056,
+      "sha256": "8AE1A0A900BD8BE87B59BA32B1FDF1137C77576B112FA8B3E2B4A18026A4A69E",
       "hashCliParameter": "-Data3Sha256"
     },
     {
@@ -36,7 +36,7 @@
     }
   ],
   "baseline": {
-    "contractId": "kaziklu-en-original-12files-data3-malieini-v4",
+    "contractId": "kaziklu-en-original-12files-data3-malieini-v8",
     "exactTopLevelFileSet": true,
     "fileCount": 12,
     "files": [
@@ -138,9 +138,11 @@
     "registryWrites": 0,
     "audioOperations": 0,
     "syntheticReportPath": "manifests/synthetic_test_report.json",
-    "syntheticReportSchema": "dies-irae-kaziklu-kr.synthetic-savepath-package-tests.v4",
-    "syntheticReportCreatedUtc": "2026-08-11T17:47:05.1620746Z",
-    "syntheticReportSha256": "DC1D508C04EC56E7B617CF1EF2E20496DB6667D63A1D4E66011F58140B7D4B91"
+    "syntheticReportSchema": "dies-irae-kaziklu-kr.synthetic-savepath-package-tests.v8",
+    "syntheticReportCreatedUtc": "2026-08-12T10:19:49.4854111Z",
+    "syntheticReportSha256": "9DEAD689B23C89FDA0052E0261BFE8F7B972CED3A5EE08CB34B374A22AFC9E73",
+    "runtimeUserReview": "PASS — user approved all sliders",
+    "gitRelease": "APPROVED FOR PUBLICATION"
   },
   "licensing": {
     "font": "Noto Sans KR derivative embedded in files/data3.dat",
@@ -150,5 +152,12 @@
     "noticePath": "THIRD_PARTY_NOTICES.md",
     "noticeSha256": "659501CC7B9D2CE4D68D04EC5DBBE809B0133F50A409A3394AE2836EA4AAC1AF",
     "sourceNoticeReferenceSha256": "63F1A4B69FD45090FD01B1F4366604BA3E10829D293324F5F77349F9A5204555"
+  },
+  "runtimeApproval": {
+    "status": "APPROVED",
+    "approvedUtc": "2026-08-12T10:43:45.823Z",
+    "statement": "모든 막대 정상",
+    "evidencePath": "manifests/runtime_user_approval.json",
+    "evidenceSha256": "7ABF379A9785092B0DC9351821D45891DA65B5474030BC7E52C91AD33BBE5833"
   }
 }

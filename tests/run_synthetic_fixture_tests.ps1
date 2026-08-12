@@ -3,10 +3,10 @@ param([string]$OutputRoot = '')
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
-. (Join-Path (Split-Path -Parent $PSScriptRoot) 'lib\KazikluSavePath.Core.ps1')
+. (Join-Path $PSScriptRoot '..\lib\KazikluSavePath.Core.ps1')
 
 if ([string]::IsNullOrWhiteSpace($OutputRoot)) {
-    $OutputRoot = Join-Path ([IO.Path]::GetTempPath()) ('kaziklu_savepath_v3_fixture_' + [Guid]::NewGuid().ToString('N'))
+    $OutputRoot = Join-Path ([IO.Path]::GetTempPath()) ('kaziklu_savepath_v8_fixture_' + [Guid]::NewGuid().ToString('N'))
 }
 $OutputRoot = [IO.Path]::GetFullPath($OutputRoot)
 New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null
@@ -55,7 +55,7 @@ function New-SyntheticCase([string]$Name) {
             $originalIni.AddRange([byte[]][Text.Encoding]::ASCII.GetBytes("100`r`n"))
             [IO.File]::WriteAllBytes((Join-Path $game $fileName), $originalIni.ToArray())
         } else {
-            [IO.File]::WriteAllBytes((Join-Path $game $fileName), [Text.Encoding]::UTF8.GetBytes("synthetic-baseline::$fileName::v3"))
+            [IO.File]::WriteAllBytes((Join-Path $game $fileName), [Text.Encoding]::UTF8.GetBytes("synthetic-baseline::$fileName::v8"))
         }
     }
 
@@ -68,7 +68,7 @@ function New-SyntheticCase([string]$Name) {
     $files = Join-Path $package 'files'
     New-Item -ItemType Directory -Force -Path $files | Out-Null
     $data3 = Join-Path $files 'data3.dat'
-    [IO.File]::WriteAllBytes($data3, [Text.Encoding]::UTF8.GetBytes('synthetic data3 overlay payload v3'))
+    [IO.File]::WriteAllBytes($data3, [Text.Encoding]::UTF8.GetBytes('synthetic data3 overlay payload v8'))
 
     $patchedIni = Join-Path $files 'malie.ini'
     [byte[]]$sourceIni = [IO.File]::ReadAllBytes((Join-Path $game 'malie.ini'))
@@ -92,9 +92,9 @@ function New-SyntheticCase([string]$Name) {
     $data3Hash = Get-KazikluSha256 $data3
     $patchedIniHash = Get-KazikluSha256 $patchedIni
     $contract = [pscustomobject]@{
-        Schema='dies-irae-kaziklu-kr.savepath-contract.synthetic.v3'
-        ContractId=('synthetic-savepath-v3-' + $Name)
-        ReleaseVersion='synthetic-savepath-v3'
+        Schema='dies-irae-kaziklu-kr.savepath-contract.synthetic.v8'
+        ContractId=('synthetic-savepath-v8-' + $Name)
+        ReleaseVersion='synthetic-savepath-v8'
         OverlayName='data3.dat'
         ManagedIniName='malie.ini'
         Data3Size=[long](Get-Item -LiteralPath $data3).Length
@@ -223,11 +223,11 @@ try {
     Write-KazikluJsonAtomic $paths.ActiveManifest $state
     Expect-Throw {
         [void](Invoke-KazikluVerify -GameDir $case.Game -PackageRoot $case.Package -StateRoot $case.State -Data3Sha256 ('0' * 64) -PatchedIniSha256 $case.PatchedIniHash -Contract $case.Contract)
-    } 'v3 release 계약'
+    } 'v8 release 계약'
     Add-Result 'canonical process and active-state contract guard' 'PASS' 'foreign same-name path allowed; exact target and state+CLI hash substitution rejected'
 
     $summary = [ordered]@{
-        schema='dies-irae-kaziklu-kr.synthetic-savepath-package-tests.v3'
+        schema='dies-irae-kaziklu-kr.synthetic-savepath-package-tests.v8'
         createdUtc=[DateTime]::UtcNow.ToString('o')
         powershellVersion=$PSVersionTable.PSVersion.ToString()
         gameLaunches=0
@@ -244,7 +244,7 @@ try {
 } catch {
     Add-Result 'test harness' 'FAIL' ([string]$_.Exception.Message)
     $summary = [ordered]@{
-        schema='dies-irae-kaziklu-kr.synthetic-savepath-package-tests.v3'
+        schema='dies-irae-kaziklu-kr.synthetic-savepath-package-tests.v8'
         createdUtc=[DateTime]::UtcNow.ToString('o')
         powershellVersion=$PSVersionTable.PSVersion.ToString()
         gameLaunches=0; registryWrites=0; audioOperations=0

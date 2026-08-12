@@ -1,49 +1,29 @@
-# Dies irae ~Interview with Kaziklu Bey~ 한국어 패치 1.0.1 (savepath v4)
+# Dies irae ~Interview with Kaziklu Bey~ 한국어 패치 1.0.2
 
-이 버전은 다음 두 파일만 관리합니다.
+영문판을 기준으로 시나리오, 시스템 CSV, 글꼴 및 이미지 기반 UI를 한국어화한 패치입니다. 원본 `malie.exe`와 `data.dat`은 교체하지 않습니다.
 
-- `files/data3.dat`: 한국어 번역·UI·글꼴·Unicode 실행 오버레이
-- `files/malie.ini`: 저장 경로 생성을 막던 `TITLE`의 CP932 `81 60` 두 곳만 ASCII `~`로 바꾼 설정 파일
+## 주요 반영 사항
 
-원본 `malie.exe`와 `data.dat`는 절대 교체하지 않습니다. 설치 전 원본 12파일을 크기와 SHA-256으로 모두 확인하고, 원본 `malie.ini`를 게임/패키지 밖 상태 폴더에 exact 백업한 뒤 두 관리 파일을 설치합니다.
+- 전체 시나리오 한국어화 및 헬가→빌헬름 친밀한 누나 말투 교정
+- 로트 슈피네·리자 브렌나 등 인명 교정
+- 타이틀, 설정, 저장/불러오기, 용어집, 음성 설정 등 이미지 UI 교정
+- 용어집 목록을 `융합형·구현형·전개형·특수형`으로 정리하고 본문 정식 명칭 유지
+- 설정 메뉴 활성/비활성 상태의 크기·정렬·영문 잔재 교정
+- 사운드·텍스트·음성 설정의 조절 막대는 원본 픽셀을 보존
+- 저장 폴더 생성 오류를 막기 위한 `malie.ini` TITLE 물결표 교정
 
-## 1.0.1 변경 사항
+## 설치
 
-- 공식 관계(`ヴィルヘルムの母であり、姉`)와 사용자 확정에 맞춰 Helga→Wilhelm 대사를 다정하고 모성적·집착적인 누나 반말로 교정했습니다.
-- `v_hrg*` 85좌표를 전수 검토해 61좌표를 수정하고 24좌표를 유지했으며, 동일 문장 연속 슬롯 1좌표를 함께 수정했습니다.
-- Claudia 대상 격노 반말, 웃음·비명, 독일어 노래·영창은 문맥에 맞게 유지했습니다.
-- 저장 경로 수정 `malie.ini`와 네 개 wrapper의 bytes/동작은 1.0.0과 같습니다. 공통 core는 새 `data3.dat`의 version/size/SHA 계약만 갱신했습니다.
-
-## 고정 해시
-
-- `data3.dat` (23,890,944 bytes): `B7F46AEB1A5E9AAA31B255C102863FC366A7F4973BFABA56EE854D656D1145DF`
-- patched `malie.ini` (2,880 bytes): `6F46E60A92B92FA36DBAE7962D0848C6A8EDA5132818AD1481CE03A1D054AD70`
-- original `malie.ini` (2,882 bytes): `ADE7C6BCBD11B741F7FEA34EAFFB48E7E4375AFF73F2D2354907206B3F129712`
-
-## 이전 버전에서 갱신
-
-v3가 설치되어 있으면 **v3 패키지의 제거 스크립트와 v3 data3 SHA로 먼저 원본 12파일 상태를 복원한 뒤** v4를 설치하십시오. v2 이하도 해당 버전의 제거 절차로 먼저 원본 상태를 복원해야 합니다. 새 패키지를 기존 활성 설치 위에 덮어쓰는 방식은 double-install 보호로 거부됩니다.
-
-## 설치·검증·제거
-
-먼저 게임과 설정 도구를 모두 종료하십시오.
+게임과 설정 도구를 종료한 뒤 실행하십시오.
 
 ```powershell
-$d3 = 'B7F46AEB1A5E9AAA31B255C102863FC366A7F4973BFABA56EE854D656D1145DF'
+$d3 = '8AE1A0A900BD8BE87B59BA32B1FDF1137C77576B112FA8B3E2B4A18026A4A69E'
 $ini = '6F46E60A92B92FA36DBAE7962D0848C6A8EDA5132818AD1481CE03A1D054AD70'
 .\install_ko.ps1 -GameDir 'D:\Games\Kaziklu' -Data3Sha256 $d3 -PatchedIniSha256 $ini
 .\verify_ko.ps1 -GameDir 'D:\Games\Kaziklu' -Data3Sha256 $d3 -PatchedIniSha256 $ini
-.\uninstall_ko.ps1 -GameDir 'D:\Games\Kaziklu' -Data3Sha256 $d3 -PatchedIniSha256 $ini
 ```
 
-설치된 `data3.dat` 또는 `malie.ini`가 변경되거나 누락되어 일반 제거가 거부될 때만 아래를 사용합니다.
+제거는 `uninstall_ko.ps1`, 손상된 관리 상태의 강제 복원은 `force_restore_ko.ps1`을 사용합니다.
 
-```powershell
-.\force_restore_ko.ps1 -GameDir 'D:\Games\Kaziklu' -Data3Sha256 $d3 -PatchedIniSha256 $ini
-```
-
-설치·제거·강제 복원은 **지정한 게임 폴더의 정확한 `malie.exe`가 실행 중이면 거부**됩니다. 상태·백업은 기본적으로 `%LOCALAPPDATA%\DiesIraeKazikluBeyKR`에 저장됩니다. double install, wrong baseline, payload/설치본/백업/state tamper는 쓰기 전에 fail-close합니다.
-
-## 제3자 글꼴 라이선스
-
-`data3.dat`에는 Noto Sans KR 파생 글꼴 사본이 포함됩니다. 고지는 `THIRD_PARTY_NOTICES.md`, 전체 SIL OFL 1.1 본문은 `licenses/OFL.txt`를 확인하십시오.
+- `data3.dat`: 23,725,056 bytes / `8AE1A0A900BD8BE87B59BA32B1FDF1137C77576B112FA8B3E2B4A18026A4A69E`
+- patched `malie.ini`: 2,880 bytes / `6F46E60A92B92FA36DBAE7962D0848C6A8EDA5132818AD1481CE03A1D054AD70`

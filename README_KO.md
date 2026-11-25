@@ -19,8 +19,8 @@
 ```powershell
 $d3 = '8AE1A0A900BD8BE87B59BA32B1FDF1137C77576B112FA8B3E2B4A18026A4A69E'
 $ini = '6F46E60A92B92FA36DBAE7962D0848C6A8EDA5132818AD1481CE03A1D054AD70'
-.\install_ko.ps1 -GameDir 'D:\Games\Kaziklu' -Data3Sha256 $d3 -PatchedIniSha256 $ini
-.\verify_ko.ps1 -GameDir 'D:\Games\Kaziklu' -Data3Sha256 $d3 -PatchedIniSha256 $ini
+.\install_ko.ps1 -GameDir '<게임 폴더>' -Data3Sha256 $d3 -PatchedIniSha256 $ini
+.\verify_ko.ps1 -GameDir '<게임 폴더>' -Data3Sha256 $d3 -PatchedIniSha256 $ini
 ```
 
 제거는 `uninstall_ko.ps1`, 손상된 관리 상태의 강제 복원은 `force_restore_ko.ps1`을 사용합니다.
